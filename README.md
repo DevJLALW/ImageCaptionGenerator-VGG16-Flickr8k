@@ -6,28 +6,36 @@ The aim of this project is to generate captions for given input images. The data
 Source: Flickr8k Dataset on Kaggle:  https://www.kaggle.com/adityajn105/flickr8k
 
 ## Steps
-1. Environment Setup
+1. Environment Setup:
+
 Google Collab
-2. Feature Extraction
+2. Feature Extraction:
+
 Use the VGG16 model to extract features from images. The VGG16 model is restructured to output features from the last fully connected layer.
 Preprocess the images and extract feature vectors for each image in the dataset.
 Save the extracted features to a file for later use.
-3. Captions Data Preparation
+3. Captions Data Preparation:
+
 Load the captions from the dataset and map each image to its corresponding captions.
 Preprocess the captions by converting them to lowercase, removing special characters and digits, and adding start and end sequence tags.
-4. Tokenization
+4. Tokenization:
+
 Tokenize the text captions to convert words into integer sequences.
 Determine the vocabulary size and the maximum caption length for padding.
-5. Data Splitting
+5. Data Splitting:
+
 Split the dataset into training and testing sets, with 90% of the data used for training and 10% for testing.
-6. Data Generator
+6. Data Generator:
+
 Implement a data generator to yield image features and corresponding text sequences in batches. This helps in efficiently training the model without loading the entire dataset into memory.
-7. Model Architecture
+7. Model Architecture:
+
 Define the image feature extractor model using CNN.
 Define the text processing model using Embedding and LSTM layers.
 Combine the outputs of the CNN and LSTM models to form the final image captioning model.
 Compile the model using categorical cross-entropy loss and the Adam optimizer.
-8. Model Training
+8. Model Training:
+
 Train the model using the data generator for a specified number of epochs.
 
 ## Conclusion
